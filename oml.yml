@@ -11,7 +11,7 @@ repositories:
 
 # Maven dependencies
 dependencies:
-   - io.opencaesar.ontologies:core-vocabularies:5.+
+   - io.opencaesar.ontologies:imce-vocabularies:+
 
 # Project's datasets
 datasets:

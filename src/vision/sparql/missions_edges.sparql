@@ -1,0 +1,20 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX base:        <http://imce.jpl.nasa.gov/foundation/base#>
+PREFIX operational:        <http://opencaesar.io/example/vocabulary/operational#>
+
+#SELECT DISTINCT ?iri ?id ?name ?type
+SELECT DISTINCT ?iri ?m_id ?o_id ?oiri 
+WHERE {
+	?iri a operational:Mission ;
+		base:hasIdentifier ?m_id ;
+#		base:hasCanonicalName ?m_name ;
+	OPTIONAL{
+		?iri operational:requires ?oiri;
+			OPTIONAL{
+				?oiri base:hasIdentifier ?o_id ;
+					base:hasIdentifier ?o_id ;
+			}
+	}
+}
+ORDER BY ?m_id ?o_id
+
