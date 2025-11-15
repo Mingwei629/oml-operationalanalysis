@@ -1,6 +1,8 @@
 ---
 title: "analysis_matrix"
-format: html
+format: 
+  html:
+    self-contained: true
 ---
 
 # Ontological Modeling and Analysis using R Scripting
