@@ -13,5 +13,9 @@
       ]
     }
   },
-  "postCreateCommand": "code --install-extension https://github.com/opencaesar/oml-vision/releases/download/v0.3.0/oml-vision-0.3.0.vsix"
+
+  "postCreateCommand": [
+    "wget https://github.com/opencaesar/oml-vision/releases/download/v0.3.0/oml-vision-0.3.0.vsix",
+    "code --install-extension oml-vision-0.3.0.vsix"
+  ]
 }
