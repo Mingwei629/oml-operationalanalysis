@@ -1,6 +1,6 @@
 {
   "name": "OML Dev Container",
-  "image": "ghcr.io/UTNAK/oml-dev:latest", // ご自身の情報に置き換えてください
+  "image": "ghcr.io/utnak/oml-dev:latest", // ご自身の情報に置き換えてください
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "21"

@@ -13,11 +13,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set lowercase owner name
+        run: echo "OWNER_LC=${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]' >> $GITHUB_ENV
+        # このステップで、環境変数 OWNER_LC に小文字のユーザー名がセットされます
+
       - name: Log in to GHCR
+        # 環境変数を使用する際は $OWNER_LC のように参照します
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Build Docker image
-        run: docker build -t ghcr.io/${{ toLower(github.repository_owner) }}/oml-dev:latest .
+        # 環境変数 OWNER_LC を使用
+        run: docker build -t ghcr.io/$OWNER_LC/oml-dev:latest .
 
       - name: Push Docker image
-        run: docker push ghcr.io/${{ github.repository_owner }}/oml-dev:latest
+        # 環境変数 OWNER_LC を使用
+        run: docker push ghcr.io/$OWNER_LC/oml-dev:latest
