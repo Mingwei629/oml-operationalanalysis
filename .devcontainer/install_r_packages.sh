@@ -8,7 +8,6 @@ Rscript -e "install.packages(c(
     'jsonlite',
     'devtools',
     'collapsibleTree',
-    'igraph',
     'colorspace'
 ), repos='https://cloud.r-project.org/')"
 
