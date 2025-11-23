@@ -6,13 +6,10 @@ Rscript -e "install.packages(c(
     'tidyverse',
     'DT',
     'jsonlite',
-    'devtools',
-    'collapsibleTree',
-    'colorspace'
+    'pak'
 ), repos='https://cloud.r-project.org/')"
 
 # GitHubパッケージをインストール
-Rscript -e "library(devtools); install_github('UTNAK/tansakusuR')"
-Rscript -e "library(devtools); install_github('UTNAK/omlhashiR')"
-
+Rscript -e "pak::pkg_install('UTNAK/tansakusuR')"
+Rscript -e "pak::pkg_install('UTNAK/omlhashiR')"
 
