@@ -15,16 +15,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Build
-        run: ./gradlew build
-
-      - name: Load
+      - name: Build Load
         run: ./gradlew load
 
       - name: Run Scripts
         run: quarto render script/analysis_matrix.qmd
       - name: Check Results
-        run: ls
+        run: ls script
       - name: Publish Docs
         uses: actions/upload-pages-artifact@v4
         with:
